@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MoncocFlix - Revendedores Oficiais</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Compre kits de panelas Moncoc com revendedores certificados. Produtos originais e de alta qualidade.">
+  <meta name="author" content="Moncoc">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Moncoc - Revendedores Oficiais">
+  <meta property="og:description" content="Compre kits de panelas Moncoc com revendedores certificados.">
+  <meta property="og:image" content="assets/img/og-banner.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/logomoncoc.PNG" type="image/x-icon">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<!-- acessar os materiais -->
+
+<div class="popup-overlay" id="loginModal" style="display: none;">
+  <div class="popup-content">
+    <h3>Área Restrita</h3>
+    <p>Insira a senha para acessar os materiais exclusivos:</p>
+    <input type="password" id="revendedorSenha" placeholder="Senha">
+    <button onclick="checkSenha()">Entrar</button>
+    <button class="close-popup" onclick="closeLogin()">×</button>
+  </div>
+</div>
+
+
+<body>
+
+  <!-- Início -->
+
+   <!-- Menu -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/img/logomoncoc.ico" alt="Logotipo da Moncoc">
+    </div>
+    <nav class="menu" id="mobileMenu">
+  <ul>
+    <li><a href="#hero">Início</a></li>
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#kits">Kits</a></li>
+    <li><a href="#videos">Vídeos</a></li>
+    <li><a href="#collaborators">Colaboradoras</a></li>
+    <li><a href="#contact">Contato</a></li>
+    <li><a href="#" onclick="openLogin()">Área do Revendedor</a></li>
+
+  </ul>
+</nav>
+<!-- Botão hamburguer -->
+<button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">☰</button>
+
+
+    <div class="user-login">
+      <a href="#" aria-label="Área do usuário">
+        <img src="assets/img/user-icon.svg" alt="">
+      </a>
+    </div>
+  </header>
+
+<!-- Home -->
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <h1>Confie na Moncoc e em nossos revendedores oficiais</h1>
+        <p>Qualidade premium e produtos autênticos.</p>
+        <a href="#kits" class="btn">Ver Kits</a>
+        <div class="seal" role="status" aria-label="Selo de autenticidade">Revendedor Oficial</div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/img/logovendedorautorizado.png" alt="Kit de panelas Moncoc">
+      </div>
+    </section>
+
+    <!-- About -->
+
+    <section id="about" class="about">
+      <h2>Sobre a Moncoc</h2>
+      <div class="about-content">
+        <p>Somos dedicados a fornecer panelas genuínas e de alta qualidade que elevam sua experiência na cozinha. Nossos produtos são autenticados para atender aos mais altos padrões.</p>
+        <img src="assets/img/imghome.png" alt="Equipe ou fábrica da Moncoc">
+      </div>
+    </section>
+
+    <!-- Card Kits -->
+
+    <section id="kits" class="kits">
+  <h2>Linhas de Panelas</h2>
+  <div class="kit-cards">
+
+    <a href="https://moncocprime.com.br/linhaarezzo/" target="_blank" class="card-link">
+      <div class="card">
+        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelas linha Arezzo">
+        <h3>Linha Arezzo</h3>
+      </div>
+    </a>
+
+    <a href="https://moncocprime.com.br/linhadlucca/" target="_blank" class="card-link">
+      <div class="card">
+        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelas Linha D’Lucca">
+        <h3>Linha D’Lucca</h3>
+      </div>
+    </a>
+
+    <a href="https://moncocprime.com.br/linhadrumont/" target="_blank" class="card-link">
+      <div class="card">
+        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelas linha Linha Drumont">
+        <h3>Linha Drumont</h3>
+      </div>
+    </a>
+
+    <a href="hthttps://moncocprime.com.br/linha-ferrara/" target="_blank" class="card-link">
+      <div class="card">
+        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelaslinha Linha Ferrara">
+        <h3>Linha Ferrara</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+    <!-- Vídeos -->
+
+    <section id="videos" class="videos">
+      <h2>Vídeos Informativos</h2>
+      <div class="video-cards">
+        <div class="video">
+          <img src="assets/img/video1.mp4" alt="Miniatura vídeo como usar as panelas">
+          <span aria-hidden="true">▶</span>
+          <p>Como usar suas panelas</p>
+        </div>
+        <div class="video">
+          <img src="assets/img/video2.webp" alt="Miniatura vídeo como cuidar das panelas">
+          <span aria-hidden="true">▶</span>
+          <p>Como cuidar das panelas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Colaborador -->
+
+    <section id="collaborators" class="collaborators">
+      <h2>Colaborador Oficial</h2>
+      <button class="collaborator-card" onclick="openPopup()" aria-label="Abrir informações do colaborador James Smith">
+        <img src="assets/img/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
+        <h3>James Smith</h3>
+        <p>ID 12316</p>
+        <span class="badge" role="status">OFICIAL</span>
+      </button>
+    </section>
+  </main>
+
+  <!--área restrita para revendedores oficiais  -->
+
+ 
+  <section class="kits">
+    <h2>Materiais Exclusivos</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="downloads/catalogo-moncoc.pdf" target="_blank">📄 Catálogo Moncoc (PDF)</a></li>
+      <li><a href="downloads/kits-divulgacao.zip" target="_blank">📦 Kits de Divulgação (.zip)</a></li>
+      <li><a href="https://youtube.com/playlist?list=..." target="_blank">🎥 Vídeos de Treinamento (YouTube)</a></li>
+      <li><a href="downloads/tabela-comissao.xlsx" target="_blank">📊 Tabela de Comissão (.xlsx)</a></li>
+    </ul>
+  </section>
+
+  <!-- Contatos -->
+
+  <footer id="contact-icons" class="contact-icons">
+  <h2>Entre em Contato</h2>
+  <div class="icon-links">
+    <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp Moncoc">
+      <img src="assets/img/whatsapp.svg" alt="WhatsApp">
+    </a>
+    <a href="https://instagram.com/sua_loja" target="_blank" aria-label="Instagram Moncoc">
+      <img src="assets/img/instagram.svg" alt="Instagram">
+    </a>
+    <a href="mailto:support@moncoc.com" target="_blank" aria-label="Email Moncoc">
+      <img src="assets/img/email.svg" alt="Email">
+    </a>
+  </div>
+  </footer>
+
+
+  
+
+  <!-- BackToTop -->
+
+  <button id="backToTop" onclick="scrollToTop()" aria-label="Voltar ao topo">↑</button>
+
+  <!-- biblioteca ScrollReveal -->
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/script.js" defer></script>
+
+<!-- Botão fixo do WhatsApp -->
+
+<a href="https://wa.me/5511999999999?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20panelas%20Moncoc"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Fale conosco no WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" viewBox="0 0 448 512">
+    <path d="M380.9 97.1c-45.3-77.5-144-112.7-232-83.2C51.2 62.6-9.8 165.9 8.6 267.9L0 320l52.2-13.6c100 52.3 222.3 7.6 274.6-92.4s7.6-222.3-92.4-274.6zM220.3 338.7c-47.6 0-91.7-18.6-125.2-52.1S43 234.4 43 186.7c0-47.6 18.6-91.7 52.1-125.2S172.7 9.4 220.3 9.4s91.7 18.6 125.2 52.1S397.6 139.1 397.6 186.7s-18.6 91.7-52.1 125.2c-33.5 33.5-77.6 52.1-125.2 52.1z"/>
+  </svg>
+</a>
+
+
+
+  <!-- Scripts -->
+  <script src="js/script.js" defer></script>
+
+  
+</body>
+</html>
