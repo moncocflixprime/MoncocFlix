@@ -53,156 +53,281 @@
   <!-- Início -->
 
    <!-- Menu -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="assets/img/logomoncoc.ico" alt="Logotipo da Moncoc">
-    </div>
+  <header class="navbar" id="navbar">
+  <div class="container">
+    <a href="#hero" class="logo" aria-label="Ir para o topo">
+      <img src="assets/logomoncoc.ico" alt="Logotipo da Moncoc">
+    </a>
+
     <nav class="menu" id="mobileMenu">
-  <ul>
-    <li><a href="#hero">Início</a></li>
-    <li><a href="#about">Sobre</a></li>
-    <li><a href="#kits">Kits</a></li>
-    <li><a href="#videos">Vídeos</a></li>
-    <li><a href="#collaborators">Colaboradoras</a></li>
-    <li><a href="#contact">Contato</a></li>
-    <li><a href="#" onclick="openLogin()">Área do Revendedor</a></li>
+      <ul>
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#kits">Kits</a></li>
+        <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#collaborators">Colaboradoras</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li><a href="#" onclick="openLogin()" class="btn-restricted">🔐 Área do Revendedor</a></li>
+      </ul>
+    </nav>
 
-  </ul>
-</nav>
-<!-- Botão hamburguer -->
-<button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">☰</button>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
 
-
-    <div class="user-login">
-      <a href="#" aria-label="Área do usuário">
-        <img src="assets/img/user-icon.svg" alt="">
-      </a>
-    </div>
-  </header>
 
 <!-- Home -->
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="hero-text">
-        <h1>Confie na Moncoc e em nossos revendedores oficiais</h1>
-        <p>Qualidade premium e produtos autênticos.</p>
-        <a href="#kits" class="btn">Ver Kits</a>
-        <div class="seal" role="status" aria-label="Selo de autenticidade">Revendedor Oficial</div>
+  <section id="hero" class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <div class="hero-text" data-sr="fade-left">
+        <h1 id="hero-title">Confie na <span>Moncoc</span> e em nossos revendedores oficiais</h1>
+        <p>Qualidade premium, autenticidade garantida.</p>
+        <a href="#kits" class="btn btn-primary" aria-label="Ver kits de panelas">Ver Kits</a>
+        <div class="seal" role="status" aria-label="Selo de revendedor oficial">
+          Revendedor Oficial
+        </div>
       </div>
-      <div class="hero-image">
-        <img src="assets/img/logovendedorautorizado.png" alt="Kit de panelas Moncoc">
+
+      <div class="hero-image" data-sr="fade-right">
+        <img src="assets/logovendedorautorizado.png" alt="Kit de panelas Moncoc com selo oficial" width="500" height="500" loading="lazy">
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- About -->
 
-    <section id="about" class="about">
-      <h2>Sobre a Moncoc</h2>
-      <div class="about-content">
-        <p>Somos dedicados a fornecer panelas genuínas e de alta qualidade que elevam sua experiência na cozinha. Nossos produtos são autenticados para atender aos mais altos padrões.</p>
-        <img src="assets/img/imghome.png" alt="Equipe ou fábrica da Moncoc">
-      </div>
-    </section>
+   <section id="about" class="about" aria-labelledby="about-title">
+  <div class="container about-content">
+    <div class="about-text" data-sr="fade-left">
+      <h2 id="about-title">Sobre a <span>Moncoc</span></h2>
+      <p>
+        Na Moncoc, acreditamos que cozinhar é uma arte — e por isso desenvolvemos panelas com qualidade premium,
+        design sofisticado e autenticidade garantida. Nossos produtos passam por rigorosos testes de qualidade
+        e são usados por milhares de clientes satisfeitos.
+      </p>
+      <p>
+        Cada linha é cuidadosamente projetada para oferecer durabilidade, desempenho térmico e estilo à sua cozinha.
+        Com revendedores oficiais em todo o Brasil, garantimos confiança e excelência em cada peça.
+      </p>
+    </div>
 
-    <!-- Card Kits -->
-
-    <section id="kits" class="kits">
-  <h2>Linhas de Panelas</h2>
-  <div class="kit-cards">
-
-    <a href="https://moncocprime.com.br/linhaarezzo/" target="_blank" class="card-link">
-      <div class="card">
-        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelas linha Arezzo">
-        <h3>Linha Arezzo</h3>
-      </div>
-    </a>
-
-    <a href="https://moncocprime.com.br/linhadlucca/" target="_blank" class="card-link">
-      <div class="card">
-        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelas Linha D’Lucca">
-        <h3>Linha D’Lucca</h3>
-      </div>
-    </a>
-
-    <a href="https://moncocprime.com.br/linhadrumont/" target="_blank" class="card-link">
-      <div class="card">
-        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelas linha Linha Drumont">
-        <h3>Linha Drumont</h3>
-      </div>
-    </a>
-
-    <a href="hthttps://moncocprime.com.br/linha-ferrara/" target="_blank" class="card-link">
-      <div class="card">
-        <img src="assets/img/logomoncoc.ico" alt="Kit de Panelaslinha Linha Ferrara">
-        <h3>Linha Ferrara</h3>
-      </div>
-    </a>
-
+    <div class="about-image" data-sr="fade-right">
+      <img src="assets/logovendedorautorizado.png" alt="Fábrica e equipe Moncoc em ação" loading="lazy" width="500" height="400">
+    </div>
   </div>
 </section>
 
 
+    <!-- Card Kits -->
+
+   <section id="kits" class="kits" aria-labelledby="kits-title">
+  <div class="container">
+    <h2 id="kits-title">Linhas de Panelas</h2>
+    <div class="kit-cards">
+
+      <a href="https://moncocprime.com.br/linhaarezzo/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Arezzo">
+        <div class="kit-info">
+          <h3>Linha Arezzo</h3>
+          <p>Design sofisticado e desempenho profissional.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linhadlucca/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha D’Lucca">
+        <div class="kit-info">
+          <h3>Linha D’Lucca</h3>
+          <p>Elegância e praticidade para o dia a dia.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linhadrumont/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Drumont">
+        <div class="kit-info">
+          <h3>Linha Drumont</h3>
+          <p>Robustez e qualidade para chefs exigentes.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+        <div class="kit-info">
+          <h3>Linha Ferrara</h3>
+          <p>Estilo clássico com fundo triplo e eficiência térmica.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+        <div class="kit-info">
+          <h3>Linha Ferrara</h3>
+          <p>Estilo clássico com fundo triplo e eficiência térmica.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+        <div class="kit-info">
+          <h3>Linha Ferrara</h3>
+          <p>Estilo clássico com fundo triplo e eficiência térmica.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+        <div class="kit-info">
+          <h3>Linha Ferrara</h3>
+          <p>Estilo clássico com fundo triplo e eficiência térmica.</p>
+        </div>
+      </a>
+
+      <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="kit-card" data-sr="fade-up">
+        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+        <div class="kit-info">
+          <h3>Linha Ferrara</h3>
+          <p>Estilo clássico com fundo triplo e eficiência térmica.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
     <!-- Vídeos -->
 
-    <section id="videos" class="videos">
-      <h2>Vídeos Informativos</h2>
-      <div class="video-cards">
-        <div class="video">
-          <img src="assets/img/video1.mp4" alt="Miniatura vídeo como usar as panelas">
-          <span aria-hidden="true">▶</span>
-          <p>Como usar suas panelas</p>
+    <section id="videos" class="videos" aria-labelledby="videos-title">
+  <div class="container">
+    <h2 id="videos-title">Vídeos Informativos</h2>
+
+    <div class="video-cards">
+
+      <!-- Vídeo 1 -->
+      <a href="https://www.youtube.com/watch?v=IkLxTCN_mas" target="_blank" class="video-card" aria-label="Assistir vídeo: Como usar suas panelas">
+        <div class="video-thumb">
+          <img src="assets/linhasmoncoc.jpeg" alt="Miniatura do vídeo Como usar as panelas" loading="lazy">
+          <span class="play-icon">▶</span>
         </div>
-        <div class="video">
-          <img src="assets/img/video2.webp" alt="Miniatura vídeo como cuidar das panelas">
-          <span aria-hidden="true">▶</span>
-          <p>Como cuidar das panelas</p>
+        <p>Como usar suas panelas</p>
+      </a>
+
+      <!-- Vídeo 2 -->
+      <a href="https://www.youtube.com/watch?v=IkLxTCN_mas" target="_blank" class="video-card" aria-label="Assistir vídeo: Como cuidar das panelas">
+        <div class="video-thumb">
+          <img src="assets/linhasmoncoc.jpeg" alt="Miniatura do vídeo Como cuidar das panelas" loading="lazy">
+          <span class="play-icon">▶</span>
         </div>
-      </div>
-    </section>
+        <p>Como cuidar das panelas</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Card Colaborador -->
 
-    <section id="collaborators" class="collaborators">
-      <h2>Colaborador Oficial</h2>
-      <button class="collaborator-card" onclick="openPopup()" aria-label="Abrir informações do colaborador James Smith">
-        <img src="assets/img/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
+   <section id="collaborators" class="collaborators" aria-labelledby="colaboradores-title">
+  <div class="container">
+    <h2 id="colaboradores-title">Colaborador Oficial</h2>
+
+    <div class="collaborator-card" onclick="openPopup()" role="button" tabindex="0" aria-label="Abrir informações do colaborador James Smith">
+      <div class="collaborator-photo">
+        <img src="assets/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
+      </div>
+      <div class="collaborator-info">
         <h3>James Smith</h3>
-        <p>ID 12316</p>
-        <span class="badge" role="status">OFICIAL</span>
-      </button>
-    </section>
+        <p><strong>ID:</strong> 12316</p>
+        <span class="badge">✔ OFICIAL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!--área restrita para revendedores oficiais  -->
 
  
-  <section class="kits">
-    <h2>Materiais Exclusivos</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li><a href="downloads/catalogo-moncoc.pdf" target="_blank">📄 Catálogo Moncoc (PDF)</a></li>
-      <li><a href="downloads/kits-divulgacao.zip" target="_blank">📦 Kits de Divulgação (.zip)</a></li>
-      <li><a href="https://youtube.com/playlist?list=..." target="_blank">🎥 Vídeos de Treinamento (YouTube)</a></li>
-      <li><a href="downloads/tabela-comissao.xlsx" target="_blank">📊 Tabela de Comissão (.xlsx)</a></li>
-    </ul>
-  </section>
+  <section class="kits materiais" aria-labelledby="materiais-title">
+  <div class="container">
+    <h2 id="materiais-title">📂 Materiais Exclusivos</h2>
+
+    <div class="materiais-grid">
+
+      <a href="downloads/catalogo-moncoc.pdf" target="_blank" class="material-card">
+        <div class="material-icon">📄</div>
+        <h3>Catálogo Moncoc</h3>
+        <p>PDF com toda a linha de produtos.</p>
+      </a>
+
+      <a href="downloads/kits-divulgacao.zip" target="_blank" class="material-card">
+        <div class="material-icon">📦</div>
+        <h3>Kits de Divulgação</h3>
+        <p>Arquivos promocionais em .ZIP.</p>
+      </a>
+
+      <a href="https://youtube.com/playlist?list=..." target="_blank" class="material-card">
+        <div class="material-icon">🎥</div>
+        <h3>Vídeos de Treinamento</h3>
+        <p>Playlists no YouTube com instruções.</p>
+      </a>
+
+      <a href="downloads/tabela-comissao.xlsx" target="_blank" class="material-card">
+        <div class="material-icon">📊</div>
+        <h3>Tabela de Comissão</h3>
+        <p>Planilha com percentuais atualizados.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- Contatos -->
 
-  <footer id="contact-icons" class="contact-icons">
-  <h2>Entre em Contato</h2>
-  <div class="icon-links">
-    <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp Moncoc">
-      <img src="assets/img/whatsapp.svg" alt="WhatsApp">
-    </a>
-    <a href="https://instagram.com/sua_loja" target="_blank" aria-label="Instagram Moncoc">
-      <img src="assets/img/instagram.svg" alt="Instagram">
-    </a>
-    <a href="mailto:support@moncoc.com" target="_blank" aria-label="Email Moncoc">
-      <img src="assets/img/email.svg" alt="Email">
-    </a>
+  <footer id="contact" class="footer">
+  <div class="container footer-content">
+
+    <!-- Bloco de contato -->
+    <div class="footer-section">
+      <h2>📞 Entre em Contato</h2>
+      <p><strong>Telefone:</strong> <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+      <p><strong>Email:</strong> <a href="mailto:support@moncoc.com">support@moncoc.com</a></p>
+    </div>
+
+    <!-- Bloco de redes sociais -->
+    <div class="footer-section">
+      <h2>🌐 Siga a Moncoc</h2>
+      <div class="social-icons">
+        <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp">
+          <img src="assets/img/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/sua_loja" target="_blank" aria-label="Instagram">
+          <img src="assets/img/instagram.svg" alt="Instagram">
+        </a>
+       
+      </div>
+    </div>
+
+    <!-- Bloco de créditos -->
+    <div class="footer-section">
+      <h2>💻 Dev for</h2>
+      <a href="https://www.instagram.com/owlcodersoftware/" target="_blank" class="dev-brand" aria-label="Desenvolvedora do site">
+        <img src="assets/LogoOwlCoder.png" alt="Logo da desenvolvedora" class="dev-logo">
+        <span>@owlcodersoftware</span>
+      </a>
+    </div>
+
   </div>
-  </footer>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Moncoc. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
 
 
   

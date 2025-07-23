@@ -153,3 +153,21 @@ function checkSenha() {
     alert("Senha incorreta! Acesso negado.");
   }
 }
+
+/* Animações com ScrollReveal */
+
+ScrollReveal().reveal('[data-sr="fade-left"]', {
+  origin: 'left',
+  distance: '50px',
+  duration: 800,
+  delay: 100,
+  reset: false
+});
+
+ScrollReveal().reveal('[data-sr="fade-right"]', {
+  origin: 'right',
+  distance: '50px',
+  duration: 800,
+  delay: 100,
+  reset: false
+});
