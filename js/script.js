@@ -1,51 +1,43 @@
-// Scroll suave para o topo
+// ✅ script.js REVISADO
+
+// Voltar ao topo
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Mostrar botão "voltar ao topo" apenas quando necessário
 const backToTopButton = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopButton.style.display = 'block';
-  } else {
-    backToTopButton.style.display = 'none';
-  }
+  backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 
-// Acessibilidade: permitir ENTER/ESPAÇO nos cards
-document.querySelectorAll('.collaborator-card').forEach(card => {
+// Acessibilidade nos cards de colaborador
+const cards = document.querySelectorAll('.collaborator-card');
+cards.forEach(card => {
   card.setAttribute('tabindex', '0');
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+  card.addEventListener('keydown', e => {
+    if (['Enter', ' '].includes(e.key)) {
       e.preventDefault();
       openPopup();
     }
   });
 });
 
-// Abrir um popup/modal com detalhes do colaborador
+// Modal colaborador
 function openPopup() {
-  // Estrutura simples do modal (caso não tenha framework)
   const modal = document.createElement('div');
   modal.className = 'popup-overlay';
   modal.innerHTML = `
-    <div class="popup-content" role="dialog" aria-modal="true" aria-label="Detalhes do colaborador">
-      <button class="close-popup" aria-label="Fechar popup">×</button>
-      <img src="assets/img/user-photo.webp" alt="Foto do colaborador James Smith">
+    <div class="popup-content" role="dialog" aria-modal="true">
+      <button class="close-popup" aria-label="Fechar">×</button>
+      <img src="assets/img/user-photo.webp" alt="Colaborador">
       <h3>James Smith</h3>
       <p>ID 12316</p>
       <p>Revendedor oficial autorizado Moncoc.</p>
     </div>
   `;
-
   document.body.appendChild(modal);
 
-  // Fechar modal no clique ou tecla ESC
-  modal.querySelector('.close-popup').addEventListener('click', () => {
-    modal.remove();
-  });
-
+  modal.querySelector('.close-popup').addEventListener('click', () => modal.remove());
   document.addEventListener('keydown', function escClose(e) {
     if (e.key === 'Escape') {
       modal.remove();
@@ -54,57 +46,18 @@ function openPopup() {
   });
 }
 
-// 🚀 ScrollReveal - Animações suaves
-ScrollReveal().reveal('.hero-text', {
-  origin: 'left',
-  distance: '50px',
-  duration: 1000,
-  delay: 100
+// ScrollReveal (padronizado por atributo data-sr)
+ScrollReveal().reveal('[data-sr="fade-left"]', {
+  origin: 'left', distance: '50px', duration: 800, delay: 100
+});
+ScrollReveal().reveal('[data-sr="fade-right"]', {
+  origin: 'right', distance: '50px', duration: 800, delay: 100
+});
+ScrollReveal().reveal('[data-sr="fade-up"]', {
+  origin: 'bottom', distance: '40px', duration: 800, delay: 100
 });
 
-ScrollReveal().reveal('.hero-image', {
-  origin: 'right',
-  distance: '50px',
-  duration: 1000,
-  delay: 200
-});
-
-ScrollReveal().reveal('.about-content', {
-  origin: 'bottom',
-  distance: '40px',
-  duration: 1000,
-  delay: 200
-});
-
-ScrollReveal().reveal('.card', {
-  origin: 'bottom',
-  distance: '30px',
-  duration: 800,
-  interval: 150
-});
-
-ScrollReveal().reveal('.video', {
-  origin: 'bottom',
-  distance: '40px',
-  duration: 800,
-  interval: 200
-});
-
-ScrollReveal().reveal('.collaborator-card', {
-  origin: 'bottom',
-  distance: '40px',
-  duration: 800,
-  delay: 300
-});
-
-ScrollReveal().reveal('footer', {
-  origin: 'bottom',
-  distance: '20px',
-  duration: 600,
-  delay: 200
-});
-
-// Menu hamburguer toggle
+// Menu mobile
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -112,62 +65,102 @@ hamburgerBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
 });
 
-// Swiper de kits
-const kitsSwiper = new Swiper('.kits-swiper', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 2
-    },
-    1024: {
-      slidesPerView: 3
-    }
-  }
+// Fechar menu ao clicar em um link (melhor usabilidade)
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
 });
 
-/* área restrita para revendedores oficiais */
+// Área restrita: login
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+function checkSenha() {
+  const senha = document.getElementById("revendedorSenha").value;
+  const senhaCorreta = "moncoc2025";
+
+  if (senha === senhaCorreta) {
+    document.getElementById("materiaisExclusivos").style.display = "block";
+    closeLogin();
+    window.scrollTo({
+      top: document.getElementById("materiaisExclusivos").offsetTop - 60,
+      behavior: "smooth"
+    });
+  } else {
+    alert("Senha incorreta. Tente novamente.");
+  }
+}
+
+// LOOP INFINITO DE SCROLL NA SEÇÃO KITS
+const kitsScroll = document.querySelector('.kits-scroll');
+
+// 🔁 Scroll automático infinito para vídeos
+function loopScroll(selector, speed = 0.6) {
+  const container = document.querySelector(selector);
+  if (container) {
+    const items = [...container.children];
+    items.forEach(el => {
+      container.appendChild(el.cloneNode(true));
+    });
+
+    function autoScroll() {
+      container.scrollLeft += speed;
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      }
+      requestAnimationFrame(autoScroll);
+    }
+
+    autoScroll();
+  }
+}
+
+// Ativa o carrossel de kits e vídeos
+loopScroll('.kits-scroll', 0.6);
+loopScroll('.videos-scroll', 0.5);
 
 function openLogin() {
-  document.getElementById('loginModal').style.display = 'flex';
+  document.getElementById("loginModal").style.display = "flex";
 }
 
 function closeLogin() {
-  document.getElementById('loginModal').style.display = 'none';
+  document.getElementById("loginModal").style.display = "none";
 }
 
 function checkSenha() {
-  const senha = document.getElementById('revendedorSenha').value;
-  if (senha === 'moncoc2025') {
-    window.location.href = "area-restrita.html";
+  const senha = document.getElementById("revendedorSenha").value;
+  const senhaCorreta = "moncoc2025"; // 🔐 Edite a senha aqui
+
+  if (senha === senhaCorreta) {
+    document.getElementById("materiaisExclusivos").style.display = "block";
+    closeLogin();
+    window.scrollTo({
+      top: document.getElementById("materiaisExclusivos").offsetTop - 60,
+      behavior: "smooth"
+    });
   } else {
-    alert("Senha incorreta! Acesso negado.");
+    alert("Senha incorreta. Tente novamente.");
   }
 }
 
-/* Animações com ScrollReveal */
+// interação com o carrossel de vídeos
+const track = document.querySelector('.video-carousel-track');
+let scrollPosition = 0;
 
-ScrollReveal().reveal('[data-sr="fade-left"]', {
-  origin: 'left',
-  distance: '50px',
-  duration: 800,
-  delay: 100,
-  reset: false
-});
+setInterval(() => {
+  scrollPosition += 300;
+  if (scrollPosition >= track.scrollWidth - track.clientWidth) {
+    scrollPosition = 0;
+  }
+  track.scrollTo({
+    left: scrollPosition,
+    behavior: 'smooth'
+  });
+}, 5000);
 
-ScrollReveal().reveal('[data-sr="fade-right"]', {
-  origin: 'right',
-  distance: '50px',
-  duration: 800,
-  delay: 100,
-  reset: false
-});
+
+
