@@ -37,15 +37,18 @@
 
 <!-- acessar os materiais -->
 
-<div class="popup-overlay" id="loginModal" style="display: none;">
-  <div class="popup-content">
-    <h3>Área Restrita</h3>
-    <p>Insira a senha para acessar os materiais exclusivos:</p>
-    <input type="password" id="revendedorSenha" placeholder="Senha">
-    <button onclick="checkSenha()">Entrar</button>
-    <button class="close-popup" onclick="closeLogin()">×</button>
+<!-- Modal: Acesso Restrito Revendedor -->
+<div class="revendedor-modal-overlay" id="revendedorModal" style="display: none;">
+  <div class="revendedor-modal-content" role="dialog" aria-modal="true">
+    <button class="revendedor-close" onclick="fecharModalRevendedor()">×</button>
+    <h2>🔐 Acesso Restrito</h2>
+    <p>Insira a senha para visualizar os materiais exclusivos:</p>
+    <input type="password" id="senhaRevendedor" placeholder="Digite a senha" />
+    <button onclick="verificarSenhaRevendedor()">Entrar</button>
   </div>
 </div>
+
+
 
 
 <body>
@@ -67,7 +70,9 @@
         <li><a href="#videos">Vídeos</a></li>
         <li><a href="#collaborators">Colaboradoras</a></li>
         <li><a href="#contact">Contato</a></li>
-        <li><a href="#" onclick="openLogin()" class="btn-restricted">🔐 Área do Revendedor</a></li>
+       <li><a href="#" onclick="abrirModalRevendedor()">🔐 Área do Revendedor</a></li>
+
+
       </ul>
     </nav>
 
