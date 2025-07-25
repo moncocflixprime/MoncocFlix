@@ -163,4 +163,29 @@ setInterval(() => {
 }, 5000);
 
 
+// Mostrar modal do revendedor
+function abrirModalRevendedor() {
+  document.getElementById("revendedorModal").style.display = "flex";
+}
+
+function fecharModalRevendedor() {
+  document.getElementById("revendedorModal").style.display = "none";
+}
+
+function verificarSenhaRevendedor() {
+  const senhaCorreta = "moncoc2025"; // Troque pela senha oficial
+  const senhaDigitada = document.getElementById("senhaRevendedor").value;
+
+  if (senhaDigitada === senhaCorreta) {
+    document.getElementById("materiaisExclusivos").style.display = "block";
+    fecharModalRevendedor();
+    window.scrollTo({
+      top: document.getElementById("materiaisExclusivos").offsetTop - 80,
+      behavior: "smooth"
+    });
+  } else {
+    alert("❌ Senha incorreta. Tente novamente.");
+  }
+}
+
 
