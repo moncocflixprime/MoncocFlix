@@ -35,7 +35,7 @@
 
 </head>
 
-<!-- acessar os materiais -->
+<!-- MODAL acessar os materiais -->
 
 <!-- Modal: Acesso Restrito Revendedor -->
 <div class="revendedor-modal-overlay" id="revendedorModal" style="display: none;">
@@ -45,6 +45,18 @@
     <p>Insira a senha para visualizar os materiais exclusivos:</p>
     <input type="password" id="senhaRevendedor" placeholder="Digite a senha" />
     <button onclick="verificarSenhaRevendedor()">Entrar</button>
+  </div>
+</div>
+
+<!-- Modal de login (já existente, atualizado) -->
+<div class="popup-overlay" id="loginModal" style="display: none;">
+  <div class="popup-content">
+    <h3>Entrar na Área do Revendedor</h3>
+    <p>Digite sua senha exclusiva:</p>
+    <input type="password" id="senhaRevendedor" placeholder="Senha de acesso">
+    <button onclick="verificarSenhaRevendedor()">Entrar</button>
+    <button class="close-popup" onclick="fecharModalRevendedor()">&times;</button>
+    <p class="link-cadastro">Ainda não tem senha? <a href="https://docs.google.com/forms/d/e/SEU_FORM_ID/viewform" target="_blank">Cadastre-se aqui</a></p>
   </div>
 </div>
 
@@ -71,7 +83,9 @@
         <li><a href="#collaborators">Colaboradoras</a></li>
         <li><a href="#contact">Contato</a></li>
        <li><a href="#" onclick="abrirModalRevendedor()">🔐 Área do Revendedor</a></li>
-
+       <li><a href="https://forms.gle/7figHyxvxfJDBeYe7" target="_blank" class="btn-cadastro" aria-label="Cadastrar como revendedor">
+  📝 seja um revendedor
+</a></li>
 
       </ul>
     </nav>
@@ -86,7 +100,7 @@
   <section id="hero" class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
       <div class="hero-text" data-sr="fade-left">
-        <h1 id="hero-title">Confie na <span>Moncoc</span> e em nossos revendedores oficiais</h1>
+        <h1 id="hero-title">Confie na <span>MoncocFlix</span> e em nossos revendedores oficiais</h1>
         <p>Qualidade premium, autenticidade garantida.</p>
         <a href="#kits" class="btn btn-primary" aria-label="Ver kits de panelas">Ver Kits</a>
         <div class="seal" role="status" aria-label="Selo de revendedor oficial">
