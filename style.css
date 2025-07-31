@@ -168,6 +168,14 @@ ul {
 }
 
 /* ---------------- KITS ---------------- */
+.kits-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
 .kits-scroll {
   display: flex;
   gap: 1.5rem;
@@ -177,7 +185,6 @@ ul {
   padding: 1rem 0;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  position: relative;
 }
 .kits-scroll::-webkit-scrollbar {
   display: none;
@@ -185,38 +192,77 @@ ul {
 
 .kit-card {
   flex: 0 0 85%;
-  max-width: 300px;
+  max-width: 320px;
   scroll-snap-align: start;
-  background: #f8f8f8;
-  border-radius: 12px;
+  background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+  border-radius: 16px;
   padding: 1.5rem;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
 }
 .kit-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 .kit-card img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 .kit-info h3 {
   font-size: 1.2rem;
-  color: #000;
+  color: #222;
+  margin-bottom: 0.4rem;
 }
 .kit-info p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
+  line-height: 1.4;
 }
 
+#kits-title,
+.kits-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#kits-title {
+  font-size: 2rem;
+  color: #dad1d1;
+  margin-bottom: 0.5rem;
+}
+
+.kits-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+
+/* REMOVE grid em telas grandes */
 @media (min-width: 768px) {
+  .kits-scroll {
+    overflow-x: auto;
+    display: flex;
+  }
+
   .kit-card {
-    flex: 0 0 calc(33.33% - 1rem);
+    flex: 0 0 300px;
   }
 }
+
+
+
+
+
+
 
 
 /* ---------------- VIDEOS ---------------- */
@@ -329,52 +375,66 @@ ul {
 
 /* ---------------- COLABORADOR ---------------- */
 .collaborator-card {
-  background: #fff;
-  border-radius: 16px;
+  background: linear-gradient(to bottom, #fff, #fdf9f2);
+  border-radius: 18px;
   padding: 2rem;
   text-align: center;
   max-width: 320px;
   margin: 0 auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border-top: 4px solid #d4af37;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   cursor: pointer;
 }
 .collaborator-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
+
 .collaborator-photo img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #d4af37;
+  border: 4px solid #d4af37;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
+
 .collaborator-info h3 {
-  font-size: 1.2rem;
-  color: #000;
-  margin-bottom: 0.2rem;
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
 }
 .collaborator-info p {
-  color: #555;
+  color: #777;
   font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
 
 .collaborator-badge {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -12px;
+  right: -12px;
   background-color: #d4af37;
   color: #000;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.75rem;
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
+
+.collaborator-badge::before {
+  content: "✔";
+  font-size: 0.8rem;
+}
+
 
 .collaborators {
   padding: 5rem 1.5rem;
@@ -538,12 +598,16 @@ ul {
   color: #aaa;
 }
 .footer-bottom a {
-  color: #d4af37;
+  color: #952d9e;
   text-decoration: none;
 }
 .footer-bottom a:hover {
   text-decoration: underline;
 }
+.footer-animated-line {
+  box-shadow: 0 0 6px #d4af37;
+}
+
 
 @media (max-width: 768px) {
   .footer {
