@@ -72,56 +72,11 @@ document.querySelectorAll('.menu a').forEach(link => {
   });
 });
 
-// Área restrita: login
-function openLogin() {
-  document.getElementById("loginModal").style.display = "flex";
-}
-function closeLogin() {
-  document.getElementById("loginModal").style.display = "none";
-}
-function checkSenha() {
-  const senha = document.getElementById("revendedorSenha").value;
-  const senhaCorreta = "moncoc2025";
-
-  if (senha === senhaCorreta) {
-    document.getElementById("materiaisExclusivos").style.display = "block";
-    closeLogin();
-    window.scrollTo({
-      top: document.getElementById("materiaisExclusivos").offsetTop - 60,
-      behavior: "smooth"
-    });
-  } else {
-    alert("Senha incorreta. Tente novamente.");
-  }
-}
 
 // LOOP INFINITO DE SCROLL NA SEÇÃO KITS
 const kitsScroll = document.querySelector('.kits-scroll');
 
-// 🔁 Scroll automático infinito para vídeos
-function loopScroll(selector, speed = 0.6) {
-  const container = document.querySelector(selector);
-  if (container) {
-    const items = [...container.children];
-    items.forEach(el => {
-      container.appendChild(el.cloneNode(true));
-    });
-
-    function autoScroll() {
-      container.scrollLeft += speed;
-      if (container.scrollLeft >= container.scrollWidth / 2) {
-        container.scrollLeft = 0;
-      }
-      requestAnimationFrame(autoScroll);
-    }
-
-    autoScroll();
-  }
-}
-
-// Ativa o carrossel de kits e vídeos
-loopScroll('.kits-scroll', 0.6);
-loopScroll('.videos-scroll', 0.5);
+// Área restrita: login
 
 function openLogin() {
   document.getElementById("loginModal").style.display = "flex";
