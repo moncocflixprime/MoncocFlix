@@ -102,20 +102,7 @@ function checkSenha() {
   }
 }
 
-// interação com o carrossel de vídeos
-const track = document.querySelector('.video-carousel-track');
-let scrollPosition = 0;
 
-setInterval(() => {
-  scrollPosition += 300;
-  if (scrollPosition >= track.scrollWidth - track.clientWidth) {
-    scrollPosition = 0;
-  }
-  track.scrollTo({
-    left: scrollPosition,
-    behavior: 'smooth'
-  });
-}, 5000);
 
 
 // Mostrar modal do revendedor
@@ -142,5 +129,7 @@ function verificarSenhaRevendedor() {
     alert("❌ Senha incorreta. Tente novamente.");
   }
 }
+
+
 
 
