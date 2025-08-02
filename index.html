@@ -84,7 +84,7 @@
         <li><a href="#contact">Contato</a></li>
        <li><a href="#" onclick="abrirModalRevendedor()">🔐 Área do Revendedor</a></li>
        <li><a href="https://forms.gle/7figHyxvxfJDBeYe7" target="_blank" class="btn-cadastro" aria-label="Cadastrar como revendedor">
-  📝 seja um revendedor
+  📝 Cadastro revendedor
 </a></li>
 
       </ul>
@@ -118,28 +118,30 @@
 
    <section id="about" class="about" aria-labelledby="about-title">
   <div class="container about-content">
+    
+    <!-- Texto -->
     <div class="about-text" data-sr="fade-left">
-      <h2 id="about-title">Sobre a <span>Moncoc</span></h2>
+      <h2 id="about-title">
+        Sobre a <span>Moncoc</span>
+      </h2>
       <p>
-        Na Moncoc, acreditamos que cozinhar é uma arte — e por isso desenvolvemos panelas com qualidade premium,
-        design sofisticado e autenticidade garantida. Nossos produtos passam por rigorosos testes de qualidade
-        e são usados por milhares de clientes satisfeitos.
+        Na <strong>Moncoc</strong>, acreditamos que cozinhar é uma arte — por isso, desenvolvemos panelas com qualidade premium, design sofisticado e autenticidade garantida.
       </p>
       <p>
-        Cada linha é cuidadosamente projetada para oferecer durabilidade, desempenho térmico e estilo à sua cozinha.
-        Com revendedores oficiais em todo o Brasil, garantimos confiança e excelência em cada peça.
+        Cada linha é projetada para oferecer <strong>desempenho térmico, durabilidade</strong> e estilo. Com revendedores oficiais em todo o Brasil, garantimos confiança e excelência em cada peça.
       </p>
     </div>
 
-    <div class="about-image" data-sr="fade-right">
-      <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);">
+    <!-- Vídeo institucional -->
+    <div class="about-video" data-sr="fade-right">
+      <div class="video-wrapper">
         <iframe 
-          src="https://www.youtube.com/watch?v=onuQfA-pR1s" 
+          src="https://www.youtube.com/embed/onuQfA-pR1s
+" 
           frameborder="0" 
           allow="autoplay; encrypted-media" 
           allowfullscreen
-          title="Vídeo institucional Moncoc"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          title="Vídeo institucional Moncoc">
         </iframe>
       </div>
     </div>
@@ -148,91 +150,104 @@
 </section>
 
 
+
     <!-- Card Kits -->
 
-  <section id="kits" class="kits" aria-labelledby="kits-title">
+<!-- SwiperJS CSS no <head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section id="kits" class="kits" aria-labelledby="kits-title">
   <div class="container">
     <h2 id="kits-title">Nossas Linhas Exclusivas</h2>
     <p class="kits-subtitle">Conheça as coleções premium desenvolvidas para quem exige desempenho, design e durabilidade.</p>
 
-    <div class="kits-scroll">
-      <a href="https://moncocprime.com.br/linhaarezzo/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Arezzo">
-        <div class="kit-info">
-          <h3>Linha Arezzo</h3>
-          <p>Acabamento premium e preparo de alto nível.</p>
-        </div>
-      </a>
+    <!-- Swiper wrapper -->
+    <div class="swiper kits-swiper">
+      <div class="swiper-wrapper">
 
-      <a href="https://moncocprime.com.br/linhadlucca/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha D’Lucca">
-        <div class="kit-info">
-          <h3>Linha D’Lucca</h3>
-          <p>Versatilidade e elegância para o dia a dia.</p>
-        </div>
-      </a>
+        <!-- Slide 1 -->
+        <a href="https://moncocprime.com.br/linhaarezzo/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Linha Arezzo">
+          <div class="kit-info">
+            <h3>Linha Arezzo</h3>
+            <p>Acabamento premium e preparo de alto nível.</p>
+          </div>
+        </a>
 
-      <a href="https://moncocprime.com.br/linhadrumont/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Drumont">
-        <div class="kit-info">
-          <h3>Linha Drumont</h3>
-          <p>Robustez e performance para exigentes.</p>
-        </div>
-      </a>
+        <!-- Slide 2 -->
+        <a href="https://moncocprime.com.br/linhadlucca/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Linha D’Lucca">
+          <div class="kit-info">
+            <h3>Linha D’Lucca</h3>
+            <p>Versatilidade e elegância para o dia a dia.</p>
+          </div>
+        </a>
 
-      <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
-        <div class="kit-info">
-          <h3>Linha Ferrara</h3>
-          <p>Fundo triplo com eficiência térmica superior.</p>
-        </div>
-      </a>
+        <!-- Adicione os outros cards da mesma forma abaixo -->
+        <a href="https://moncocprime.com.br/linhadrumont/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Linha Drumont">
+          <div class="kit-info">
+            <h3>Linha Drumont</h3>
+            <p>Robustez e performance para exigentes.</p>
+          </div>
+        </a>
 
-        <a href="https://www.moncocprime.com.br/linhasanpaolo/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
-        <div class="kit-info">
-          <h3>Linha San Paolo</h3>
-          <p>Fundo triplo com eficiência térmica superior.</p>
-        </div>
-      </a>
+        <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+          <div class="kit-info">
+            <h3>Linha Ferrara</h3>
+            <p>Fundo triplo com eficiência térmica superior.</p>
+          </div>
+        </a>
 
-      <a href="https://www.moncocprime.com.br/linhalebrunet/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
-        <div class="kit-info">
-          <h3>Linha Lê Brunet</h3>
-          <p>Fundo triplo com eficiência térmica superior.</p>
-        </div>
-      </a>
+        <a href="https://www.moncocprime.com.br/linhasanpaolo/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Linha San Paolo">
+          <div class="kit-info">
+            <h3>Linha San Paolo</h3>
+            <p>Fundo triplo com eficiência térmica superior.</p>
+          </div>
+        </a>
 
-       <a href="https://www.moncocprime.com.br/faqueiro-churrasco-luxo" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
-        <div class="kit-info">
-          <h3>Faqueiro Churrasco de Luxo</h3>
-          <p>eficiência.</p>
-        </div>
-      </a>
+        <a href="https://www.moncocprime.com.br/linhalebrunet/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Linha Lê Brunet">
+          <div class="kit-info">
+            <h3>Linha Lê Brunet</h3>
+            <p>Fundo triplo com eficiência térmica superior.</p>
+          </div>
+        </a>
 
-      <a href="https://www.moncocprime.com.br/facas-12-pecas/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
-        <div class="kit-info">
-          <h3>Faqueiro 12 Peças</h3>
-          <p>eficiência.</p>
-        </div>
-      </a>
+        <a href="https://www.moncocprime.com.br/faqueiro-churrasco-luxo" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Faqueiro Churrasco de Luxo">
+          <div class="kit-info">
+            <h3>Faqueiro Churrasco de Luxo</h3>
+            <p>Eficiência e elegância para churrascos.</p>
+          </div>
+        </a>
 
-      <a href="https://www.moncocprime.com.br/facas-12-pecas/" target="_blank" class="kit-card" data-sr="fade-up">
-        <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
-        <div class="kit-info">
-          <h3>Faqueiro 17 Peças</h3>
-          <p>eficiência.</p>
-        </div>
-      </a>
+        <a href="https://www.moncocprime.com.br/facas-12-pecas/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Faqueiro 12 Peças">
+          <div class="kit-info">
+            <h3>Faqueiro 12 Peças</h3>
+            <p>Conjunto ideal para refeições completas.</p>
+          </div>
+        </a>
 
+        <a href="https://www.moncocprime.com.br/facas-12-pecas/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/linhasmoncoc.jpeg" alt="Faqueiro 17 Peças">
+          <div class="kit-info">
+            <h3>Faqueiro 17 Peças</h3>
+            <p>Completo para ocasiões especiais.</p>
+          </div>
+        </a>
 
+      </div>
 
+      <!-- Paginação bullets -->
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -240,36 +255,44 @@
 
     <!-- Vídeos -->
 
-<section id="videos" class="kits videos-carousel" aria-labelledby="videos-title">
+<section id="videos" class="videos-section" aria-labelledby="videos-title">
   <div class="container">
     <h2 id="videos-title">🎥 Vídeos Informativos</h2>
-    <div class="kit-cards video-carousel">
+    <div class="swiper videos-swiper">
+      <div class="swiper-wrapper">
 
-      <a href="https://www.youtube.com/watch?v=nA_9wW7Jvzk" target="_blank" class="kit-card video-slide" data-sr="fade-up">
-        <div class="video-thumb">
-          <img src="assets/linhasmoncoc.jpeg" alt="Como usar suas panelas" loading="lazy">
-          <span class="play-icon">▶</span>
-        </div>
-        <div class="kit-info">
-          <h3>Como usar</h3>
-          <p>Dicas práticas com panelas Moncoc.</p>
-        </div>
-      </a>
+        <!-- Vídeo 1 -->
+        <a href="https://www.youtube.com/watch?v=nA_9wW7Jvzk" target="_blank" class="swiper-slide video-slide">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/nA_9wW7Jvzk/maxresdefault.jpg" alt="Como usar suas panelas" loading="lazy">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="kit-info">
+            <h3>Como usar</h3>
+            <p>Dicas práticas com panelas Moncoc.</p>
+          </div>
+        </a>
 
-      <a href="https://www.youtube.com/watch?v=1BWobmVPRCw" target="_blank" class="kit-card video-slide" data-sr="fade-up">
-        <div class="video-thumb">
-          <img src="assets/linhasmoncoc.jpeg" alt="Como cuidar das panelas" loading="lazy">
-          <span class="play-icon">▶</span>
-        </div>
-        <div class="kit-info">
-          <h3>Cuidados</h3>
-          <p>Preservando suas panelas por mais tempo.</p>
-        </div>
-      </a>
+        <!-- Vídeo 2 -->
+        <a href="https://www.youtube.com/watch?v=1BWobmVPRCw" target="_blank" class="swiper-slide video-slide">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/1BWobmVPRCw/maxresdefault.jpg" alt="Como cuidar das panelas" loading="lazy">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="kit-info">
+            <h3>Cuidados</h3>
+            <p>Preservando suas panelas por mais tempo.</p>
+          </div>
+        </a>
 
+        <!-- Adicione mais seguindo esse padrão -->
+
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -281,18 +304,21 @@
   <div class="container">
     <h2 id="colaboradores-title">Colaborador Oficial</h2>
 
-    <div class="collaborator-card" >
-      <div class="collaborator-badge">✔ Oficial</div>
-      <div class="collaborator-photo">
-        <img src="assets/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
+    <a href="https://moncocprime.com.br/revendedores/" target="_blank" class="collaborator-card-link">
+      <div class="collaborator-card">
+        <div class="collaborator-badge">✔ Oficial</div>
+        <div class="collaborator-photo">
+          <img src="assets/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
+        </div>
+        <div class="collaborator-info">
+          <h3>Colaborador Oficial</h3>
+          <p>ID 12316</p>
+        </div>
       </div>
-      <div class="collaborator-info">
-        <h3>Colaborador Oficial</h3>
-        <p>ID 12316</p>
-      </div>
-    </div>
+    </a>
   </div>
 </section>
+
 
 
   </main>
@@ -396,7 +422,79 @@
 
 
   <!-- Scripts -->
-  <script src="js/script.js" defer></script>
+
+  
+  <!-- swiper desktop -->
+
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".kits-swiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 30,
+      loop: false,           // ❌ sem loop infinito
+      rewind: true,          // ✅ volta ao primeiro quando chega no fim
+      watchOverflow: true,   // ✅ remove paginação extra desnecessária
+      grabCursor: true,
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      }
+    });
+  });
+</script>
+
+
+  <!-- swiper mobile -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const autoplayConfig = window.innerWidth < 1024 ? {
+      delay: 4500,
+      disableOnInteraction: false
+    } : false;
+
+    const videoSwiper = new Swiper(".videos-swiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      loop: false,          // ❌ sem loop infinito
+      rewind: true,         // ✅ volta ao início depois do último
+      watchOverflow: true,  // ✅ corrige paginação
+      grabCursor: true,
+      autoplay: autoplayConfig,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      }
+    });
+  });
+</script>
+
+
 
   
 </body>
