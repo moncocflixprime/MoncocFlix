@@ -35,35 +35,27 @@
 
 </head>
 
-<!-- MODAL acessar os materiais -->
 
-<!-- Modal: Acesso Restrito Revendedor -->
-<div class="revendedor-modal-overlay" id="revendedorModal" style="display: none;">
-  <div class="revendedor-modal-content" role="dialog" aria-modal="true">
-    <button class="revendedor-close" onclick="fecharModalRevendedor()">×</button>
-    <h2>🔐 Acesso Restrito</h2>
-    <p>Insira a senha para visualizar os materiais exclusivos:</p>
-    <input type="password" id="senhaRevendedor" placeholder="Digite a senha" />
-    <button onclick="verificarSenhaRevendedor()">Entrar</button>
-  </div>
-</div>
 
-<!-- Modal de login (já existente, atualizado) -->
-<div class="popup-overlay" id="loginModal" style="display: none;">
-  <div class="popup-content">
-    <h3>Entrar na Área do Revendedor</h3>
-    <p>Digite sua senha exclusiva:</p>
-    <input type="password" id="senhaRevendedor" placeholder="Senha de acesso">
-    <button onclick="verificarSenhaRevendedor()">Entrar</button>
-    <button class="close-popup" onclick="fecharModalRevendedor()">&times;</button>
-    <p class="link-cadastro">Ainda não tem senha? <a href="https://forms.gle/EUq77Vnmt1vRJzQJ7" target="_blank">Cadastre-se aqui</a></p>
-  </div>
-</div>
+
 
 
 
 
 <body>
+
+  <!-- MODAL acessar os materiais -->
+
+ <!-- Modal: Acesso Restrito Revendedor (único) -->
+  <div class="revendedor-modal-overlay" id="revendedorModal" style="display: none;">
+    <div class="revendedor-modal-content" role="dialog" aria-modal="true">
+      <button class="revendedor-close" onclick="fecharModalRevendedor()">×</button>
+      <h2>🔐 Acesso Restrito</h2>
+      <p>Insira a senha para visualizar os materiais exclusivos:</p>
+      <input type="password" id="senhaRevendedor" placeholder="Digite a senha" />
+      <button onclick="verificarSenhaRevendedor()">Entrar</button>
+    </div>
+  </div>
 
   <!-- Início -->
 
@@ -109,14 +101,14 @@
       </div>
 
       <div class="hero-image" data-sr="fade-right">
-        <img src="assets/homebg.png" alt="Kit de panelas Moncoc com selo oficial" width="500" height="500" loading="lazy">
+        <img src="assets/homeimg.jpeg" alt="Kit de panelas Moncoc com selo oficial" width="500" height="500" loading="lazy">
       </div>
     </div>
   </section>
 
     <!-- About -->
 
-   <section id="about" class="about" aria-labelledby="about-title">
+  <section id="about" class="about" aria-labelledby="about-title">
   <div class="container about-content">
     
     <!-- Texto -->
@@ -135,13 +127,14 @@
     <!-- Vídeo institucional -->
     <div class="about-video" data-sr="fade-right">
       <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/onuQfA-pR1s
-" 
-          frameborder="0" 
-          allow="autoplay; encrypted-media" 
+        <iframe
+          src="https://www.youtube.com/embed/nA_9wW7Jvzk?si=YJpTThxpaV2mIT2s"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-          title="Vídeo institucional Moncoc">
+          loading="lazy">
         </iframe>
       </div>
     </div>
@@ -151,9 +144,9 @@
 
 
 
+
     <!-- Card Kits -->
 
-<!-- SwiperJS CSS no <head> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <section id="kits" class="kits" aria-labelledby="kits-title">
@@ -167,7 +160,7 @@
 
         <!-- Slide 1 -->
         <a href="https://moncocprime.com.br/linhaarezzo/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Linha Arezzo">
+          <img src="assets/arezzo.png" alt="Linha Arezzo">
           <div class="kit-info">
             <h3>Linha Arezzo</h3>
             <p>Acabamento premium e preparo de alto nível.</p>
@@ -176,7 +169,7 @@
 
         <!-- Slide 2 -->
         <a href="https://moncocprime.com.br/linhadlucca/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Linha D’Lucca">
+          <img src="assets/dlucca.png" alt="Linha D’Lucca">
           <div class="kit-info">
             <h3>Linha D’Lucca</h3>
             <p>Versatilidade e elegância para o dia a dia.</p>
@@ -185,7 +178,7 @@
 
         <!-- Adicione os outros cards da mesma forma abaixo -->
         <a href="https://moncocprime.com.br/linhadrumont/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Linha Drumont">
+          <img src="assets/drummound.png" alt="Linha Drumont">
           <div class="kit-info">
             <h3>Linha Drumont</h3>
             <p>Robustez e performance para exigentes.</p>
@@ -193,7 +186,7 @@
         </a>
 
         <a href="https://moncocprime.com.br/linha-ferrara/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Linha Ferrara">
+          <img src="assets/ferrara.png" alt="Linha Ferrara">
           <div class="kit-info">
             <h3>Linha Ferrara</h3>
             <p>Fundo triplo com eficiência térmica superior.</p>
@@ -201,7 +194,7 @@
         </a>
 
         <a href="https://www.moncocprime.com.br/linhasanpaolo/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Linha San Paolo">
+          <img src="assets/sanpaolo.png" alt="Linha San Paolo">
           <div class="kit-info">
             <h3>Linha San Paolo</h3>
             <p>Fundo triplo com eficiência térmica superior.</p>
@@ -209,7 +202,7 @@
         </a>
 
         <a href="https://www.moncocprime.com.br/linhalebrunet/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Linha Lê Brunet">
+          <img src="assets/lebrunet.png" alt="Linha Lê Brunet">
           <div class="kit-info">
             <h3>Linha Lê Brunet</h3>
             <p>Fundo triplo com eficiência térmica superior.</p>
@@ -217,7 +210,7 @@
         </a>
 
         <a href="https://www.moncocprime.com.br/faqueiro-churrasco-luxo" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Faqueiro Churrasco de Luxo">
+          <img src="assets/faqueirochurrasco.png" alt="Faqueiro Churrasco de Luxo">
           <div class="kit-info">
             <h3>Faqueiro Churrasco de Luxo</h3>
             <p>Eficiência e elegância para churrascos.</p>
@@ -225,15 +218,15 @@
         </a>
 
         <a href="https://www.moncocprime.com.br/facas-12-pecas/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Faqueiro 12 Peças">
+          <img src="assets/faqueiro12pecas.png" alt="Faqueiro 12 Peças">
           <div class="kit-info">
             <h3>Faqueiro 12 Peças</h3>
             <p>Conjunto ideal para refeições completas.</p>
           </div>
         </a>
 
-        <a href="https://www.moncocprime.com.br/facas-12-pecas/" target="_blank" class="swiper-slide kit-card">
-          <img src="assets/linhasmoncoc.jpeg" alt="Faqueiro 17 Peças">
+        <a href="https://moncocprime.com.br/facas-17-pecas/" target="_blank" class="swiper-slide kit-card">
+          <img src="assets/faqueiro17pecas.png" alt="Faqueiro 17 Peças">
           <div class="kit-info">
             <h3>Faqueiro 17 Peças</h3>
             <p>Completo para ocasiões especiais.</p>
@@ -241,9 +234,8 @@
         </a>
 
       </div>
-
-      <!-- Paginação bullets -->
-      <div class="swiper-pagination"></div>
+  
+    
     </div>
   </div>
 </section>
@@ -255,6 +247,7 @@
 
     <!-- Vídeos -->
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <section id="videos" class="videos-section" aria-labelledby="videos-title">
   <div class="container">
     <h2 id="videos-title">🎥 Vídeos Informativos</h2>
@@ -288,8 +281,7 @@
         <!-- Adicione mais seguindo esse padrão -->
 
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
+
   </div>
 </section>
 
@@ -300,28 +292,31 @@
 
     <!-- Card Colaborador -->
 
-   <section id="collaborators" class="collaborators" aria-labelledby="colaboradores-title">
+<section id="collaborators" class="collaborators" aria-labelledby="colaboradores-title">
   <div class="container">
-    <h2 id="colaboradores-title">Colaborador Oficial</h2>
+    <h2 id="colaboradores-title">
+      Colaborador Oficial
+      <span class="verified-badge" aria-label="Verificado"></span>
+    </h2>
 
-    <a href="https://moncocprime.com.br/revendedores/" target="_blank" class="collaborator-card-link">
-      <div class="collaborator-card">
-        <div class="collaborator-badge">✔ Oficial</div>
-        <div class="collaborator-photo">
-          <img src="assets/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
-        </div>
-        <div class="collaborator-info">
-          <h3>Colaborador Oficial</h3>
-          <p>ID 12316</p>
-        </div>
+    <button type="button" class="collaborator-card" onclick="abrirModalRevendedor()" aria-haspopup="dialog">
+      <div class="collaborator-badge">✔ Oficial</div>
+      <div class="collaborator-photo">
+        <img src="assets/logovendedorautorizado.png" alt="Foto do colaborador James Smith">
       </div>
-    </a>
+      <div class="collaborator-info">
+        <h3>Colaborador Oficial</h3>
+        <p>ID </p>
+      </div>
+    </button>
   </div>
 </section>
 
 
 
-  </main>
+
+
+  
 
   <!--área restrita para revendedores oficiais  -->
 
@@ -352,7 +347,7 @@
 
   <!-- FOOTER -->
 
- <footer id="contact" class="footer">
+<footer id="contact" class="footer">
   <div class="footer-animated-line"></div> <!-- Linha dourada animada -->
 
   <div class="container footer-grid">
@@ -361,7 +356,6 @@
     <div class="footer-brand">
       <img src="assets/logomoncoc.ico" alt="Logo Moncoc" class="footer-logo">
       <p>Distribuição oficial de produtos Moncoc. Panelas premium com qualidade certificada e revendedores homologados em todo o Brasil.</p>
-
     </div>
 
     <!-- Contato -->
@@ -375,12 +369,52 @@
     <div class="footer-social">
       <h4>🌐 Siga a Moncoc</h4>
       <div class="social-icons">
-        <a href="https://wa.me/5511983157051" target="_blank" aria-label="WhatsApp">
-          <img src="assets/icons8-whatsapp-50.svg" alt="WhatsApp">
-        </a>
+
+        <!-- Instagram -->
         <a href="https://www.instagram.com/moncoc_oficial/" target="_blank" aria-label="Instagram">
-          <img src="assets/icons8-instagram-50.svg" alt="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 
+            0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 
+            2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 
+            3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 
+            3-3h10zm-5 3c-2.757 0-5 2.243-5 
+            5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 
+            2c1.654 0 3 1.346 3 3s-1.346 3-3 
+            3-3-1.346-3-3 1.346-3 3-3zm4.5-3a1.5 
+            1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+          </svg>
         </a>
+
+        <!-- WhatsApp -->
+       <!-- <a href="https://wa.me/5511983157051" target="_blank" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.004 2C6.485 2 2 6.484 2 11.999c0 2.113.56 
+            4.089 1.615 5.848L2 22l4.285-1.573a9.93 9.93 
+            0 0 0 5.719 1.772h.001c5.518 0 10.004-4.484 
+            10.004-10.001C22.01 6.484 17.522 2 12.004 
+            2zm0 18c-1.861 0-3.635-.545-5.158-1.577l-.369-.247-2.544.933.872-2.482-.24-.379A8.02 
+            8.02 0 0 1 4 11.999c0-4.415 3.589-8.001 
+            8.004-8.001 4.416 0 8.005 3.586 8.005 
+            8.001 0 4.415-3.589 8.001-8.005 
+            8.001zm4.465-5.803c-.244-.123-1.437-.707-1.66-.787-.223-.082-.386-.123-.549.123-.163.244-.629.787-.771.95-.143.162-.285.183-.53.061-.244-.123-1.03-.379-1.963-1.207-.725-.646-1.215-1.447-1.358-1.691-.143-.244-.015-.376.108-.499.111-.111.244-.285.366-.427.123-.143.163-.244.244-.407.082-.162.041-.305-.02-.427-.061-.123-.549-1.33-.752-1.823-.198-.476-.398-.41-.549-.418l-.47-.009c-.163 0-.427.061-.65.305s-.854.835-.854 2.037c0 1.202.875 2.363.996 2.528.122.162 1.724 2.629 4.187 3.686.586.253 1.043.404 1.399.518.588.187 1.123.161 1.547.098.471-.07 1.437-.586 1.64-1.151.203-.566.203-1.052.142-1.151-.061-.101-.223-.163-.467-.285z"/>
+          </svg>
+        </a>
+
+        YouTube
+        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.397 
+            3.5 12 3.5 12 3.5s-7.397 0-9.408.583a2.97 2.97 
+            0 0 0-2.09 2.103A31.4 31.4 0 0 0 .5 
+            12a31.4 31.4 0 0 0 .002 5.814 2.97 2.97 0 0 0 
+            2.09 2.103C4.603 20.5 12 20.5 12 
+            20.5s7.397 0 9.408-.583a2.97 2.97 0 0 0 
+            2.09-2.103A31.4 31.4 0 0 0 23.5 
+            12a31.4 31.4 0 0 0-.002-5.814zM9.75 
+            15.568V8.432L15.818 12 9.75 15.568z"/>
+          </svg>
+        </a>   -->
+
       </div>
     </div>
   </div>
@@ -388,9 +422,9 @@
   <div class="footer-bottom">
     <p>&copy; 2025 Moncoc. Desenvolvido por <a href="https://www.instagram.com/owlcodersoftware/" target="_blank">@owlcodersoftware</a></p>
     <p style="font-size: 0.85rem; color: #bbb;">✔ Site 100% seguro | Acesso exclusivo com verificação de identidade</p>
-
   </div>
 </footer>
+
 
 
 
@@ -410,14 +444,14 @@
 
 <!-- Botão fixo do WhatsApp -->
 
-<a href="https://wa.me/5511983157051?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20panelas%20Moncoc"
+<!--<a href="https://wa.me/5511983157051?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20panelas%20Moncoc"
    class="whatsapp-float"
    target="_blank"
    aria-label="Fale conosco no WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" viewBox="0 0 448 512">
     <path d="M380.9 97.1c-45.3-77.5-144-112.7-232-83.2C51.2 62.6-9.8 165.9 8.6 267.9L0 320l52.2-13.6c100 52.3 222.3 7.6 274.6-92.4s7.6-222.3-92.4-274.6zM220.3 338.7c-47.6 0-91.7-18.6-125.2-52.1S43 234.4 43 186.7c0-47.6 18.6-91.7 52.1-125.2S172.7 9.4 220.3 9.4s91.7 18.6 125.2 52.1S397.6 139.1 397.6 186.7s-18.6 91.7-52.1 125.2c-33.5 33.5-77.6 52.1-125.2 52.1z"/>
   </svg>
-</a>
+</a>  -->
 
 
 
