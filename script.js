@@ -72,11 +72,35 @@ document.querySelectorAll('.menu a').forEach(link => {
   });
 });
 
+// Área restrita: login
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+function checkSenha() {
+  const senha = document.getElementById("revendedorSenha").value;
+  const senhaCorreta = "moncoc2025";
+
+  if (senha === senhaCorreta) {
+    document.getElementById("materiaisExclusivos").style.display = "block";
+    closeLogin();
+    window.scrollTo({
+      top: document.getElementById("materiaisExclusivos").offsetTop - 60,
+      behavior: "smooth"
+    });
+  } else {
+    alert("Senha incorreta. Tente novamente.");
+  }
+}
 
 // LOOP INFINITO DE SCROLL NA SEÇÃO KITS
 const kitsScroll = document.querySelector('.kits-scroll');
 
-// Área restrita: login
+
+
+
 
 function openLogin() {
   document.getElementById("loginModal").style.display = "flex";
@@ -102,9 +126,6 @@ function checkSenha() {
   }
 }
 
-
-
-
 // Mostrar modal do revendedor
 function abrirModalRevendedor() {
   document.getElementById("revendedorModal").style.display = "flex";
@@ -129,7 +150,5 @@ function verificarSenhaRevendedor() {
     alert("❌ Senha incorreta. Tente novamente.");
   }
 }
-
-
 
 
