@@ -110,21 +110,34 @@ function closeLogin() {
   document.getElementById("loginModal").style.display = "none";
 }
 
-function checkSenha() {
-  const senha = document.getElementById("revendedorSenha").value;
-  const senhaCorreta = "moncoc2025"; // 🔐 Edite a senha aqui
+// Lista de senhas permitidas
+const SENHAS = new Set(
+  ["moncoc2025", "moncoc2026", "moncocVIP"].map(s => s.trim().toLowerCase())
+);
 
-  if (senha === senhaCorreta) {
+function verificarSenhaRevendedor(event) {
+  // Evita reload se estiver dentro de <form>
+  if (event?.preventDefault) event.preventDefault();
+
+  const input = document.getElementById("senhaRevendedor");
+  const senhaDigitada = (input?.value || "").trim().toLowerCase();
+
+  if (SENHAS.has(senhaDigitada)) {
     document.getElementById("materiaisExclusivos").style.display = "block";
-    closeLogin();
-    window.scrollTo({
-      top: document.getElementById("materiaisExclusivos").offsetTop - 60,
-      behavior: "smooth"
-    });
+    fecharModalRevendedor?.();
+    const alvo = document.getElementById("materiaisExclusivos");
+    if (alvo) {
+      window.scrollTo({
+        top: alvo.offsetTop - 80,
+        behavior: "smooth"
+      });
+    }
   } else {
-    alert("Senha incorreta. Tente novamente.");
+    alert("❌ Senha incorreta. Tente novamente.");
   }
 }
+
+
 
 // Mostrar modal do revendedor
 function abrirModalRevendedor() {
@@ -151,4 +164,43 @@ function verificarSenhaRevendedor() {
   }
 }
 
+// Scroll suave com offset da navbar
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    const offset = 80; // altura da navbar fixa
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = target.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  });
+});
+
+// Destacar link ativo no menu conforme rolagem
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href").includes(current)) {
+      a.classList.add("active");
+    }
+  });
+});
 
