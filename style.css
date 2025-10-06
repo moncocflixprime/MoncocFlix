@@ -87,7 +87,7 @@ nav ul li a.active {
 .hero-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   max-width: 1200px;
   justify-content: space-between;
 }
@@ -134,6 +134,13 @@ nav ul li a.active {
     text-align: center;
   }
 }
+
+.hero-image img {
+  max-width: 90%;
+  height: auto;
+  display: flex;
+}
+
 
 
 /* ---------------- ABOUT ---------------- */
